@@ -9,8 +9,6 @@
 
 import random
 
-
-
 def elegirPalabra(listadoPalabras):
     """
     listadoPalabras (list): lista de palabras (strings)
@@ -24,7 +22,6 @@ def elegirPalabra(listadoPalabras):
 # -----------------------------------
 # Fin del helper
 # -----------------------------------
-
 
 def cargarPalabras():
     """
@@ -49,8 +46,6 @@ def cargarPalabras():
 # Por default cargarPalabras() deberá seleccionar palabras de longitud 
 # mayor e igual a 6, seleccionada del archivo "palabras.txt".
 
-
-
 def esPalabraAdivinada(palabraSecreta, letrasMencionadas):
     '''
     palabraSecreta: string, la palabra que el usuario intenta adivinar
@@ -62,8 +57,6 @@ def esPalabraAdivinada(palabraSecreta, letrasMencionadas):
         if letter not in letrasMencionadas:
             return False
     return True
-
-
 
 def obtenPalabraAdivinada(palabraSecreta, letrasMencionadas):
     '''
@@ -85,8 +78,6 @@ def obtenPalabraAdivinada(palabraSecreta, letrasMencionadas):
             palabra += '_'
 
     return palabra
-
-
 
 def obtenLetrasDisponibles(letrasMencionadas):
     '''
@@ -126,15 +117,14 @@ def obtenerLetra(letrasMencionadas):
             continue
 
         if not letra.lower() in alfabeto:
-            print('Eso no es una letra!\n')
+            print('Ojo, eso no es una letra\n')
             continue
 
         if letra.lower() in letrasMencionadas:
-            print('Ya has ingresado esa letra!\n')
+            print('Ya ingresaste esa letra!\n')
             continue
         else:
             return letra.lower()
-
 
 def ahorcado(palabraSecreta):
     '''
@@ -161,83 +151,15 @@ def ahorcado(palabraSecreta):
     # - Llevá un contador de intentos restantes (inicialmente 8)
     # - En cada vuelta: mostrar letras disponibles, pedir input, validar que sea 1 letra a-z,
     #   manejar repetidos, actualizar estado, y chequear victoria/derrota.
-    HANGMANPICS = [
-    '''
-       ---+
-          |
-          |
-          |
-          |
-          |
-    =========''',
-    '''
-      +---+
-          |
-          |
-          |
-          |
-          |
-    =========''',
-    '''
-      +---+
-      |   |
-          |
-          |
-          |
-          |
-    =========''',
-    '''
-      +---+
-      |   |
-      O   |
-          |
-          |
-          |
-    =========''', '''
-      +---+
-      |   |
-      O   |
-      |   |
-          |
-          |
-    =========''', '''
-      +---+
-      |   |
-      O   |
-     /|   |
-          |
-          |
-    =========''', '''
-      +---+
-      |   |
-      O   |
-     /|\\  |
-          |
-          |
-    =========''', '''
-      +---+
-      |   |
-      O   |
-     /|\\  |
-     /    |
-          |
-    =========''', '''
-      +---+
-      |   |
-      O   |
-     /|\\  |
-     / \\  |
-          |
-    =========''']
-
+    
     intentos = 8
     letrasMencionadas = []
 
-    print('¡Bienvenido/a al juego, Ahorcado!')
+    print('¡Bienvenido/a al Ahorcado!')
     print(f'Estoy pensando en una palabra de {len(palabraSecreta)} letras.')
 
     while True:
-        print(HANGMANPICS[8 - intentos], '\n')
+        print('\n')
         print(obtenPalabraAdivinada(palabraSecreta, letrasMencionadas), '\n')
         print(obtenLetrasDisponibles(letrasMencionadas), '\n')
 
@@ -247,11 +169,11 @@ def ahorcado(palabraSecreta):
             intentos -= 1
 
         if intentos == 0:
-            print(HANGMANPICS[8], f'\nLo lamento, ya no tienes oportunidades. La palabra era {palabraSecreta}.')
+            print(f'\nMala suerte. Se te terminaron las chances. La palabra era {palabraSecreta}.')
             break
 
         if esPalabraAdivinada(palabraSecreta, letrasMencionadas):
-            print(HANGMANPICS[8 - intentos], '\n', f'\nHas descubierto la palabra sectreta: {palabraSecreta}!')
+            print('\n', f'\n¡Muy bien! Describiste la palabra sectreta: {palabraSecreta}!')
             break
 
 
