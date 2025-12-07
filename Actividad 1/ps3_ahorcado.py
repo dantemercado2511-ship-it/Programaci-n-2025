@@ -9,8 +9,6 @@
 
 import random
 
-
-
 def elegirPalabra(listadoPalabras):
     """
     listadoPalabras (list): lista de palabras (strings)
@@ -20,11 +18,9 @@ def elegirPalabra(listadoPalabras):
     """
     return random.choice(listadoPalabras)
 
-
 # -----------------------------------
 # Fin del helper
 # -----------------------------------
-
 
 def cargarPalabras():
     """
@@ -49,8 +45,6 @@ def cargarPalabras():
 # Por default cargarPalabras() deberá seleccionar palabras de longitud 
 # mayor e igual a 6, seleccionada del archivo "palabras.txt".
 
-
-
 def esPalabraAdivinada(palabraSecreta, letrasMencionadas):
     '''
     palabraSecreta: string, la palabra que el usuario intenta adivinar
@@ -62,8 +56,6 @@ def esPalabraAdivinada(palabraSecreta, letrasMencionadas):
         if letter not in letrasMencionadas:
             return False
     return True
-
-
 
 def obtenPalabraAdivinada(palabraSecreta, letrasMencionadas):
     '''
@@ -85,8 +77,6 @@ def obtenPalabraAdivinada(palabraSecreta, letrasMencionadas):
             palabra += '_'
 
     return palabra
-
-
 
 def obtenLetrasDisponibles(letrasMencionadas):
     '''
@@ -134,7 +124,6 @@ def obtenerLetra(letrasMencionadas):
             continue
         else:
             return letra.lower()
-
 
 def ahorcado(palabraSecreta):
     '''
@@ -186,7 +175,6 @@ def ahorcado(palabraSecreta):
         if esPalabraAdivinada(palabraSecreta, letrasMencionadas):
             print('\n', f'\nMuy bien. La palabra sectreta era: {palabraSecreta}!')
             break
-
 
 # Cuando termines tu función ahorcado, descomentá estas dos líneas para probar
 # (pista: mientras probás, podés elegir vos la palabra secreta)
