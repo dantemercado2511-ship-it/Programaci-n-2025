@@ -1,0 +1,18 @@
+def merge_sort_gen(L: list, left=0, right=None):
+    if left == 0 and right is None:
+        S = copy.copy(L)
+    else:
+        S = L
+
+    if right is None:
+        right = len(S) - 1
+
+    if left >= right:
+        return
+
+    mid = (left + right) // 2
+
+    yield from merge_sort_gen(S, left, mid)
+    yield from merge_sort_gen(S, mid + 1, right)
+
+    yield from merge_gen(S, (left, mid), (mid + 1, right))

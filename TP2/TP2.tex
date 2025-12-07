@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{article}
+
+% Paquetes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\newcommand{\Hz}{\,\mathrm{Hz}}
+
+% Configuración de márgenes
+\geometry{margin=2.5cm}
+
+% Encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{} % limpia encabezado y pie
+
+% Encabezado
+\fancyhead[L]{Programación}
+\fancyhead[C]{TP 2}
+\fancyhead[R]{2025}
+
+% Pie de página
+\fancyfoot[L]{Cortesini Luciano}
+\fancyfoot[R]{\thepage}
+
+% Separadores
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+\input{complejidad_algoritmos/complejidad_de_algoritmos}
+\input{ordenamiento/ordenamiento}
+\end{document}

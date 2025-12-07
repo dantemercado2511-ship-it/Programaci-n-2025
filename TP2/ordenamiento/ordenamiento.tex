@@ -1,0 +1,123 @@
+\section{Ordenamiento}
+Dependiendo del tipo del tiempo de ejecución, los algoritmos de ordenamiento 
+pueden ser categorizados como rápidos o lentos. Serán rápidos todos aquellos que 
+tengan un tiempo de ejecución menor o igual a $O(n \log n)$. Al resto se los considera 
+lentos. Siguiendo esta definición se tiene:\\
+
+\textbf{Lentos:}
+\begin{enumerate}
+    \item \textbf{\underline{Bubble sort}}
+    \item \textbf{\underline{Selection sort}}
+    \item Insertion sort
+\end{enumerate}
+
+\textbf{Rápidos:}
+\begin{enumerate}
+    \item Quicksort
+    \item \textbf{\underline{Merge sort}}
+    \item Heapsort
+    \item \textit{Timsort}
+\end{enumerate}
+
+Aquellos en negrita y subrayados se han visto en la cátedra, los restantes no. 
+\textit{Timsort} ha sido identificado en itálica porque es el método implementado 
+por Python mediante el built--in \texttt{sort()}.
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+    \item
+    Investigue el algoritmo insertion sort y qué lo diferencia de 
+    selection sort. Programe una rutina para implementar 
+    insertion sort. ¿Qué tipo de complejidad tiene?
+
+    El algoritmo \textit{insertion sort} recorre la lista de izquierda a derecha y,
+    en cada paso, inserta el elemento actual en su posición correcta dentro de la 
+    sublista ya ordenada situada a su izquierda. Así, después de cada inserción, 
+    la parte izquierda de la lista permanece siempre ordenada.
+
+    Por otro lado, \textit{selection sort} adopta en cada
+    iteración busca el elemento mínimo del segmento aún desordenado y lo intercambia
+    con el elemento ubicado al comienzo de dicho segmento. De este modo, va
+    construyendo la lista ordenada seleccionando mínimos de manera sucesiva.
+
+    \textbf{Algoritmo:}
+    \verbatiminput{ordenamiento/ordenamiento/function/insertion_sort.txt }
+
+    Este algoritmo tiene complejidad $O(n^2)$
+
+    \item 
+    Investigue uno de los siguientes ordenamientos rápidos: Quicksort, 
+    Heapsort o Timsort. Programe una rutina para implementar el 
+    ordenamiento seleccionado. ¿Qué tipo de complejidad tiene en el mejor 
+    caso y peor caso?
+
+    \textbf{Algoritmo:}
+    \verbatiminput{ordenamiento/ordenamiento/function/quick_sort.txt }
+
+    El mejor caso de este algoritmo es si el pivote divide excatamente a la
+    mitad a las sucesivas listas, dando una complejidad de $O(n\,log(n))$. El
+    peor caso, se da cuando el pivote es el menor o mayor elemento de la lista,
+    dando una complejidad de $O(n^2)$.
+
+    \item
+    Realice el ordenamiento de la siguiente lista \([1,7,3,2,0,8]\) mostrando 
+    paso a paso su ejecución mediante:
+    \begin{enumerate}[label=\roman*.]
+        \item Ordenamiento burbuja
+          $$[1, 3, 7, 2, 4, 8]$$
+          $$[1, 3, 2, 7, 4, 8]$$
+          $$[1, 3, 2, 4, 7, 8]$$
+          $$[1, 2, 3, 4, 7, 8]$$
+        \item Ordenamiento por inserción
+          $$[1, 7, 3, 2, 4, 8]$$
+          $$[1, 3, 7, 2, 4, 8]$$
+          $$[1, 2, 3, 7, 4, 8]$$
+          $$[1, 2, 3, 4, 7, 8]$$
+          $$[1, 2, 3, 4, 7, 8]$$
+        \item Ordenamiento por selección
+          $$[1, 7, 3, 2, 4, 8]$$
+          $$[1, 2, 3, 7, 4, 8]$$
+          $$[1, 2, 3, 7, 4, 8]$$
+          $$[1, 2, 3, 4, 7, 8]$$
+          $$[1, 2, 3, 4, 7, 8]$$
+          $$[1, 2, 3, 4, 7, 8]$$
+    \end{enumerate}
+
+    \item 
+    Realice el ordenamiento de la siguiente lista 
+    \([22,36,6,79,26,45,75,13]\) mostrando paso a paso su ejecución mediante:
+    \begin{enumerate}[label=\roman*.]
+        \item Ordenamiento por fusión de listas (merge sort)
+          $$[22, 36, 6, 79, 26, 45, 75, 13]$$
+          $$[22, 36, 6, 79, 26, 45, 75, 13]$$
+          $$[22, 36, 6, 79, 26, 45, 75, 13]$$
+          $$[22, 36, 6, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 75, 13]$$
+          $$[6, 22, 36, 79, 26, 45, 13, 75]$$
+          $$[6, 22, 36, 79, 26, 45, 13, 75]$$
+          $$[6, 22, 36, 79, 13, 26, 45, 75]$$
+          $$[6, 22, 36, 79, 13, 26, 45, 75]$$
+          $$[6, 22, 36, 79, 13, 26, 45, 75]$$
+          $$[6, 22, 36, 79, 13, 26, 45, 75]$$
+          $$[6, 22, 36, 79, 13, 26, 45, 75]$$
+          $$[6, 13, 22, 36, 79, 26, 45, 75]$$
+          $$[6, 13, 22, 36, 79, 26, 45, 75]$$
+          $$[6, 13, 22, 26, 36, 79, 45, 75]$$
+          $$[6, 13, 22, 26, 36, 79, 45, 75]$$
+          $$[6, 13, 22, 26, 36, 45, 79, 75]$$
+          $$[6, 13, 22, 26, 36, 45, 75, 79]$$
+          $$[6, 13, 22, 26, 36, 45, 75, 79]$$
+        \item Ordenamiento rápido (quick sort)
+          $$[6, 36, 22, 79, 26, 45, 75, 13]$$
+          $$[6, 13, 22, 79, 26, 45, 75, 36]$$
+          $$[6, 13, 22, 26, 79, 45, 75, 36]$$
+          $$[6, 13, 22, 26, 36, 45, 75, 79]$$
+    \end{enumerate}
+
+    Puede descargar estos ordenamientos de forma animada en \url{https://github.com/Corte0/programacion/tree/main/TP2/ordenamiento/mp4}
+\end{enumerate}
+

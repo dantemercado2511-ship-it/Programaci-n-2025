@@ -1,0 +1,4 @@
+def swap(L:list ,i:int ,j:int):
+    tmp = L[i]
+    L[i] = L[j]
+    L[j] = tmp

@@ -1,0 +1,16 @@
+def merge(L1:list, L2:list) -> list:
+    C1 = copy.copy(L1)
+    C2 = copy.copy(L2)
+    M = list()
+    while len(C1) > 0 and len(C2) > 0:
+        if C1[0] < C2[0]:
+            M.append(C1[0])
+            C1.pop(0)
+        else:
+            M.append(C2[0])
+            C2.pop(0)
+    if len(C1) > 0:
+        M += C1
+    else:
+        M += C2
+    return M

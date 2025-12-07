@@ -1,0 +1,28 @@
+def quick_sort_gen(L:list, left=0, right=None):
+    if left == 0 and right is None:
+        S = copy.copy(L)
+    else:
+        S = L
+
+    if right is None:
+        right = len(S) - 1
+
+    if left >= right:
+        return
+
+    pivot = S[right]
+    div = left
+
+    for i in range(left, right):
+        if S[i] <= pivot:
+            if i > div:
+                swap(S,i,div)
+                yield S
+            div += 1
+
+    if div != right:
+       swap(S,div,right)
+       yield S
+
+    yield from quick_sort_gen(S,left, div-1)
+    yield from quick_sort_gen(S,div+1, right)

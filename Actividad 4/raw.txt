@@ -1,0 +1,12 @@
+Simulación de CMGs.py
+    LOC: 332
+    LLOC: 123
+    SLOC: 118
+    Comments: 39
+    Single comments: 32
+    Multi: 93
+    Blank: 89
+    - Comment Stats
+        (C % L): 12%
+        (C % S): 33%
+        (C + M % L): 40%

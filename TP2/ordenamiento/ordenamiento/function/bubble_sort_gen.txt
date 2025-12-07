@@ -1,0 +1,7 @@
+def bubble_sort_gen(L:list):
+    S = copy.copy(L)
+    for i in range(len(S)-1):
+        for j in range(len(S)-1):
+            if S[j] > S[j+1]:
+                swap(S,j,j+1)
+                yield S

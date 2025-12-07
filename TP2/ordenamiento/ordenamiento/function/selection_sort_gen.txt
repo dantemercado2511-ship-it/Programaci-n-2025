@@ -1,0 +1,11 @@
+def selection_sort_gen(L:list):
+    S = copy.copy(L)
+    for i in range(len(L)):
+        minimo = S[i]
+        minindex = i
+        for j in range(i+1, len(L)):
+            if S[j] < minimo:
+                minimo = S[j]
+                minindex = j
+        swap(S,i,minindex)
+        yield S

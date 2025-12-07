@@ -1,0 +1,29 @@
+def merge_gen(L: list, I1: tuple, I2: tuple):
+    """
+    Une dos intervalos ordenados de una Lista L.
+    I1 e I2 son tuplas (start, end) inclusivas.
+    """
+    M = []
+    len1 = I1[1] - I1[0] + 1
+    len2 = I2[1] - I2[0] + 1
+
+    i, j = 0, 0
+    while i < len1 and j < len2:
+        if L[I1[0] + i] <= L[I2[0] + j]:   # <= para estabilidad
+            M.append(L[I1[0] + i])
+            i += 1
+        else:
+            M.append(L[I2[0] + j])
+            j += 1
+
+    if i < len1:
+        M.extend(L[I1[0] + i : I1[1] + 1])
+    else:
+        M.extend(L[I2[0] + j : I2[1] + 1])
+
+    j = 0
+    for i in range(I1[0], I2[1] + 1):
+        L.pop(L.index(M[j],I1[0], I2[1]+1))
+        L.insert(i,M[j])
+        j += 1
+        yield L.copy()

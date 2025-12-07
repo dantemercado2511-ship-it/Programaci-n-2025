@@ -1,0 +1,13 @@
+Simulación de CMGs.py:
+    h1: 6
+    h2: 106
+    N1: 80
+    N2: 138
+    vocabulary: 112
+    length: 218
+    calculated_length: 728.669343188026
+    volume: 1484.0033730085577
+    difficulty: 3.9056603773584904
+    effort: 5796.013173825876
+    time: 322.0007318792153
+    bugs: 0.4946677910028526

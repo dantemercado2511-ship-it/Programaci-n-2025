@@ -1,0 +1,9 @@
+def merge_sort(L:list) -> list:
+    lenght = len(L)
+    if lenght <= 1:
+        return L
+    S = copy.copy(L)
+    left = merge_sort(S[:int(lenght/2)])
+    right = merge_sort(S[int(lenght/2):])
+    S = merge(left,right)
+    return S
