@@ -1,0 +1,10 @@
+Durante el ascenso del vehiículo la presión dinámica depende
+tanto de la velocidad como de la densidad del aire.
+Mientras que la velocidad comienza en cero y aumenta exponencialmente,
+la densidad disminuye a medida que el vehiculo asciende, tendiendo
+a cero en el infinito.
+Al multiplicar estas expresiones, obtenemos que la presión dinámica
+tiende a cero para un tiempo que tiende a cero (ya que la velocidad es 0).
+y tiende a cero cuando el tiempo tiende a infinito (por la disminución de
+la densidad), teniendo un máximo intermedio (Max Q).
+
