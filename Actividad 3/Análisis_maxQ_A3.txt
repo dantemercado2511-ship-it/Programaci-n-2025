@@ -1,0 +1,8 @@
+Análisis del Máx Q:
+
+La presión dinámica depende de q(t)=1/2ρ(h(t))v(t)^2.
+A medida que aumenta el tiempo, la velocidad crece linealmente, haciendo quye el término v^2 aumenta muy rápido.
+Al mismo tiempo, la atmósfera se vuelve menos densa con la altura, y ρ(h) cae de forma exponencial o por potencias según la capa.
+Al inicio domina el crecimiento de la velocidad, generando que q(t) aumenta.
+Luego, cuando la diminución de la densidad supera al crecimiento de la velocidad, q(t) comienza a bajar.
+La competencia entre ambos efectos genera un máximo bien definido conocido como Max Q, punto donde la carga aerodinámica es máxima.
